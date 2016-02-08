@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block dokonania %}
+
+{% for post in posts %}
+<div class="jumbotron">
+    <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <font color = "#002775"><p>{{ post.title }}</p></font>
+                <font color = "black" size="11"><p>{{ post.text|linebreaks }}</p></font>
+                <font color = "black" size="6"><p>{{ post.author }}</p></font>
+                <font color = "black" size="6"><p>published: {{ post.published_date }}</p></font>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+            </div>
+        </div>
+
+    <hr class="featurette-divider">
+</div>
+{% endfor %}
+
+{% endblock %}
+
+
+<hr class="featurette-divider">
